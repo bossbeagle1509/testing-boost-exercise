@@ -12,7 +12,7 @@ BOOST_AUTO_TEST_SUITE(MatrixIOTests)
 BOOST_AUTO_TEST_CASE(SimpleOpenDataTest)
 {
   const std::string filename = "test_matrix.csv";
-  const int size = 3;
+  const int         size     = 3;
 
   // Create a 3x3 matrix file
   std::ofstream file(filename);
@@ -31,13 +31,12 @@ BOOST_AUTO_TEST_CASE(SimpleOpenDataTest)
 
   // Check values
   double expected[3][3] = {
-    {1.0, 2.0, 3.0},
-    {4.0, 5.0, 6.0},
-    {7.0, 8.0, 9.0}
-  };
+      {1.0, 2.0, 3.0},
+      {4.0, 5.0, 6.0},
+      {7.0, 8.0, 9.0}};
 
-  for(int i = 0; i < size; ++i) {
-    for(int j = 0; j < size; ++j) {
+  for (int i = 0; i < size; ++i) {
+    for (int j = 0; j < size; ++j) {
       BOOST_CHECK_CLOSE(m(i, j), expected[i][j], 1e-4);
     }
   }
